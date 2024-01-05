@@ -2,6 +2,7 @@ from typing import Literal
 import pydantic
 from krisha_kz.utils import path
 
+
 BrowserType = Literal['chrome', 'firefox']
 EnvContext = Literal['local', 'test', 'stage']
 
@@ -36,3 +37,5 @@ class Config(pydantic.BaseSettings):
 
 context = Config().context
 config = Config(_env_file=path.to_resource(f'.env.{context}'))
+
+

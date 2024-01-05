@@ -3,6 +3,7 @@ import pytest
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.options import Options
 from selene import browser
 from krisha_kz.utils import attach
 from config import Config
@@ -43,8 +44,22 @@ def browser_management(request, context):
     browser.config.window_height = Config().window_height
     browser.config.timeout = Config().timeout
 
+    options = Options()
+
+    if Config().headless:
+        if browser.config.driver_name == 'chrome':
+            options = webdriver.ChromeOptions()
+        elif browser.config.driver_name == 'firefox':
+            options = webdriver.FirefoxOptions()
+        else:
+            raise ValueError(f"Unsupported browser: {browser.config.driver_name}")
+
+        options.add_argument('--headless')
+        options.add_argument('--disable-gpu')
+
+        browser.config.driver_options = options
+
     if context == 'test' or context == 'prod':
-        options = Options()
 
         selenoid_capabilities = {
             "browserName": browser.config.driver_name,
@@ -54,6 +69,7 @@ def browser_management(request, context):
                 "enableVideo": True
             }
         }
+
         options.capabilities.update(selenoid_capabilities)
         remote_driver_url = os.getenv('REMOTE_DRIVER_URL')
         driver = webdriver.Remote(
