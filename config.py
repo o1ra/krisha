@@ -35,5 +35,4 @@ class Config(pydantic.BaseSettings):
 
 
 context = Config().context
-print(f"Current context: {context}")
 config = Config(_env_file=path.to_resource(f'.env.{context}'))
