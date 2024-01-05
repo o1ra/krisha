@@ -29,13 +29,10 @@ def browser_management():
             }
         }
         options.capabilities.update(selenoid_capabilities)
-
-        login = os.getenv('LOGIN')
-        password = os.getenv('PASSWORD')
         remote_driver_url = os.getenv('REMOTE_DRIVER_URL')
 
         browser.config.driver = webdriver.Remote(
-            command_executor=f"https://{login}:{password}@{remote_driver_url}",
+            command_executor=f"{remote_driver_url}",
             options=options,
         )
 
@@ -45,4 +42,5 @@ def browser_management():
     attach.add_screenshot(browser)
     attach.add_logs(browser)
     attach.add_video(browser)
+
     browser.quit()

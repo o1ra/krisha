@@ -2,8 +2,6 @@ from selene import by
 from selene.support.shared import browser
 
 
-
-
 class SearchPage:
     def __int__(self):
         pass

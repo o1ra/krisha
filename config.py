@@ -1,12 +1,12 @@
-from typing import Literal, Optional
+from typing import Literal
 import pydantic
 from krisha_kz.utils import path
 
 BrowserType = Literal['chrome', 'firefox', 'edge']
+EnvContext = Literal['local', 'test', 'stage']
 
 
 class Config(pydantic.BaseSettings):
-    context: Literal['local', 'test', 'stage'] = 'test'
 
     # --- User Aurh ---
     buy_or_rent: str = None
@@ -21,18 +21,19 @@ class Config(pydantic.BaseSettings):
     checkbox_agents: bool = 'False'
     checkbox_owner: bool = 'False'
 
+    # --- Context ---
+    context: EnvContext = 'test'
+
+    # --- Browser ---
     base_url: str = 'https://krisha.kz'
     driver_name: BrowserType = 'chrome'
     version = '100.0'
     hold_driver_at_exit: bool = False
     window_width: int = 1024
     window_height: int = 768
-    timeout: float = 3.0
+    timeout: float = 10.0
     headless: bool = False
-    remote_url: Optional[str] = None
 
 
 context = Config().context
 config = Config(_env_file=path.to_resource('.env' if context == 'local' else f'.env.{context}'))
-
-# config = Config(_env_file=path.to_resource(f'config.{context}.env.'))

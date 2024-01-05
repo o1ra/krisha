@@ -2,7 +2,7 @@ import allure
 from allure_commons.types import Severity
 from selene import browser, have, by, be
 from krisha_kz.data import data_user
-from krisha_kz.model.search_page import SearchPage
+from krisha_kz.model.main_page import SearchPage
 
 
 @allure.tag("web")
