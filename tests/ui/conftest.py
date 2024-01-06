@@ -5,8 +5,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
 from selene import browser
-from krisha_kz.utils import attach
-from config import Config
+from krisha_kz.utils import attach, path
+from tests.ui.config import Config
 
 
 def pytest_addoption(parser):
@@ -21,7 +21,7 @@ def pytest_addoption(parser):
 
 def pytest_configure(config):
     context = config.getoption("--context")
-    env_file_path = f".env.{context}"
+    env_file_path = path.to_resource(f".env.{context}")
 
     if os.path.exists(env_file_path):
         load_dotenv(dotenv_path=env_file_path)
