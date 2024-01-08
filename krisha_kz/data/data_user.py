@@ -1,4 +1,4 @@
-from tests.ui import config
+import config
 
 buy_or_rent = config.config.buy_or_rent
 categories_for_rent = config.config.categories_for_rent

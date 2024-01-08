@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
 from selene import browser
 from krisha_kz.utils import attach, path
-from tests.ui.config import Config
+from config import Config
 
 
 def pytest_addoption(parser):

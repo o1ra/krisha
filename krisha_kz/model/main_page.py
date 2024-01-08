@@ -1,4 +1,4 @@
-from selene import by
+from selene import by, be
 from selene.support.shared import browser
 
 
@@ -8,6 +8,24 @@ class SearchPage:
 
     def open(self):
         browser.open('/')
+        return self
+
+
+    def map_search(self):
+        browser.element('.map-search').click()
+        return self
+
+
+    def close_modal(self):
+        browser.element('.fi-close-big').double_click()
+        return self
+
+    def check_search_btn_text(self):
+        browser.element('.kr-btn--blue').element(by.text("Показать результаты"))
+        return self
+
+    def check_map(self):
+        browser.element('.map-canvas').should(be.visible)
         return self
 
     def select_category_type(self, buy_or_rent):
@@ -55,4 +73,12 @@ class SearchPage:
 
     def checkbox_owner(self):
         browser.element(".checkbox-conditions").element(by.text("от хозяев")).click()
+        return self
+
+    def search_btn_blue(self):
+        browser.element('.kr-btn--blue').click()
+        return self
+
+    def title_gid(self):
+        browser.element(".guide-promo__title").should.have.text("Крыша Гид")
         return self
