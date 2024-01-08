@@ -6,7 +6,7 @@ authors = ["Irina Kirillova <{ID}+{username}@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 pytest = "6.2.5"
 selene = "^2.0.0rc4"
 allure-pytest = "^2.12.0"
