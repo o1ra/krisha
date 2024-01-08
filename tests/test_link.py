@@ -107,7 +107,7 @@ def test_link_news():
     with allure.step("Проверяем URL'"):
         main_menu.check_url('https://krisha.kz/content/')
 
-    with allure.step("Заголовок: 'Крыша Гид'"):
+    with allure.step("Заголовок: 'Новости'"):
         main_menu.title_news()
 
 
@@ -122,7 +122,7 @@ def test_link_guide():
     with allure.step("Открываем главную страницу"):
         main_menu.open()
 
-    with allure.step("Выбираем пункт меню 'Новостройки'"):
+    with allure.step("Выбираем пункт меню 'Крыша Гид'"):
         main_menu.item_menu("Крыша Гид")
 
     with allure.step("Проверяем URL'"):
