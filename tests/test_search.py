@@ -1,6 +1,6 @@
 import allure
 from allure_commons.types import Severity
-from selene import browser, by, be
+from selene import browser
 from krisha_kz.data import data_user
 from krisha_kz.model.main_page import SearchPage
 
