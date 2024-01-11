@@ -5,6 +5,7 @@ import dataclasses
 class User:
     buy_or_rent: str
     categories_for_rent: str
+    categories_for_sell: str
     city: str
     area: str
     number_of_rooms: str

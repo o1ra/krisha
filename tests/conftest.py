@@ -35,13 +35,6 @@ def pytest_configure(config):
     else:
         print(f"Warning: Configuration file '{env_file_path}' not found.")
 
-    data = config.getoption("--data")
-    data_path = path.to_resource(f"/data/data_user/{data}")
-    if os.path.exists(data_path):
-        load_dotenv(dotenv_path=data_path)
-    else:
-        print(f"Warning: User file '{data_path}' not found.")
-
 
 @pytest.fixture(scope="session")
 def context(request):
@@ -51,6 +44,7 @@ def context(request):
 @pytest.fixture(scope="session")
 def data(request):
     return request.config.getoption("--data")
+
 
 @pytest.fixture(scope="function", autouse=True)
 def browser_management(request, context, data):
@@ -78,7 +72,6 @@ def browser_management(request, context, data):
         browser.config.driver_options = options
 
     if context == 'test' or context == 'prod':
-
         selenoid_capabilities = {
             "browserName": browser.config.driver_name,
             "browserVersion": browser.config.version,

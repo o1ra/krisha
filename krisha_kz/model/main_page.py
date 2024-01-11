@@ -32,6 +32,10 @@ class SearchPage:
         browser.element('.category-type').click().element(by.text(buy_or_rent)).click()
         return self
 
+    def select_categories_for_sell(self, categories_for_sell):
+        browser.element('.categories-for-sell').click().element(by.text(categories_for_sell)).click()
+        return self
+
     def select_categories_for_rent(self, categories_for_rent):
         browser.element('.categories-for-rent').click().element(by.text(categories_for_rent)).click()
         return self
