@@ -7,6 +7,7 @@ from selenium.webdriver.firefox.options import Options
 from selene import browser
 from krisha_kz.utils import attach, path
 from config import config
+from krisha_kz.data.data_user import user_rent, user_buy
 
 
 def pytest_addoption(parser):
@@ -32,6 +33,18 @@ def pytest_configure(config):
 @pytest.fixture(scope="session")
 def context(request):
     return request.config.getoption("--context")
+
+
+@pytest.fixture(scope="session")
+def data():
+    data_type = os.getenv("data")
+    if data_type == "user_rent":
+        return user_rent
+    elif data_type == "user_buy":
+        return user_buy
+    else:
+        raise ValueError(f"Unsupported data type: {data_type}")
+
 
 
 @pytest.fixture(scope="function", autouse=True)

@@ -1,8 +1,8 @@
+import os
+
 import allure
 from allure_commons.types import Severity
 from selene import browser
-from config import config
-from krisha_kz.data import data_user
 from krisha_kz.model.main_page import SearchPage
 
 
@@ -37,44 +37,44 @@ def test_default_search():
 @allure.feature("Поиск")
 @allure.story("Выполнение поиска покупки квартиры ")
 @allure.link("https://krisha.kz", name="Testing")
-def test_search(context):
+def test_search(data):
+
     search_page = SearchPage()
-    user_data = getattr(data_user, config.data)
 
     with allure.step("Открываем главную страницу"):
         search_page.open()
 
     with allure.step("Выбираем пункт аренда или покупка"):
-        search_page.select_category_type(user_data.buy_or_rent)
+        search_page.select_category_type(data.buy_or_rent)
 
     with allure.step("Выбираем категорию жилья"):
-        if config.data == "user_rent":
-            search_page.select_categories_for_rent(user_data.categories_for_rent)
+        if os.getenv("data") == "user_rent":
+            search_page.select_categories_for_rent(data.categories_for_rent)
         else:
-            search_page.select_categories_for_sell(user_data.categories_for_sell)
+            search_page.select_categories_for_sell(data.categories_for_sell)
 
     with allure.step("Выбираем город и район"):
-        search_page.select_city(user_data.city)
-        search_page.select_region(user_data.area)
+        search_page.select_city(data.city)
+        search_page.select_region(data.area)
 
     with allure.step("Выбираем количество комнат"):
-        search_page.select_the_number_of_rooms(user_data.number_of_rooms)
+        search_page.select_the_number_of_rooms(data.number_of_rooms)
 
     with allure.step("Выбираем диапазон цен"):
-        search_page.prise_min(user_data.prise_min)
-        search_page.prise_max(user_data.prise_max)
+        search_page.prise_min(data.prise_min)
+        search_page.prise_max(data.prise_max)
 
     with (allure.step("Выбираем чекбоксы")):
-        if user_data.checkbox_photo:
+        if data.checkbox_photo:
             search_page.checkbox_photo()
 
-        if user_data.checkbox_new_buildings:
+        if data.checkbox_new_buildings:
             search_page.checkbox_new_buildings()
 
-        if user_data.checkbox_agents:
+        if data.checkbox_agents:
             search_page.checkbox_agents()
 
-        if user_data.checkbox_owner:
+        if data.checkbox_owner:
             search_page.checkbox_owner()
 
         with allure.step("Выполняем поиск"):

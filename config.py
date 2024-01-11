@@ -1,3 +1,4 @@
+import os
 from typing import Literal
 import pydantic
 from krisha_kz.utils import path
@@ -5,22 +6,22 @@ from krisha_kz.utils import path
 
 BrowserType = Literal['chrome', 'firefox']
 EnvContext = Literal['local', 'test', 'stage']
-User = Literal['user_buy', 'user_rent']
 
 
 class Config(pydantic.BaseSettings):
     # --- User Aurh ---
-    data: User = None
+    data: str = os.getenv("data", "user_rent")
 
     # --- Browser ---
     base_url: str = 'https://krisha.kz'
-    driver_name: BrowserType = 'chrome'
-    version = '100.0'
     hold_driver_at_exit: bool = False
-    window_width: int = 1024
-    window_height: int = 768
-    timeout: float = 15.0
-    headless: bool = False
+    remote_driver_url: str = os.getenv("REMOTE_DRIVER_URL")
+    driver_name: BrowserType = os.getenv("driver_name", 'chrome')
+    version: str = os.getenv("version", '100.0')
+    headless: bool = os.getenv("headless", 'False')
+    timeout: float = float(os.getenv("timeout", '15.0'))
+    window_width: int = int(os.getenv("window_width", '1024'))
+    window_height: int = int(os.getenv("window_height", '768'))
 
     # --- Context ---
     context: EnvContext = 'local'
