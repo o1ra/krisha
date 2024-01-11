@@ -1,7 +1,9 @@
 from typing import Literal
 import pydantic
-from krisha_kz.utils import path
 
+from krisha_kz.users.user import User
+from krisha_kz.utils import path
+from krisha_kz.data.data_user import user_rent
 
 BrowserType = Literal['chrome', 'firefox']
 EnvContext = Literal['local', 'test', 'stage']
@@ -9,17 +11,18 @@ EnvContext = Literal['local', 'test', 'stage']
 
 class Config(pydantic.BaseSettings):
     # --- User Aurh ---
-    buy_or_rent: str = None
-    categories_for_rent: str = None
-    city: str = None
-    area: str = None
-    number_of_rooms: str = None
-    prise_min: int = 1
-    prise_max: int = 100000000
-    checkbox_photo: bool = 'false'
-    checkbox_new_buildings: bool = 'false'
-    checkbox_agents: bool = 'False'
-    checkbox_owner: bool = 'False'
+    data: User = user_rent
+    # buy_or_rent: str = None
+    # categories_for_rent: str = None
+    # city: str = None
+    # area: str = None
+    # number_of_rooms: str = None
+    # prise_min: int = 1
+    # prise_max: int = 100000000
+    # checkbox_photo: bool = 'false'
+    # checkbox_new_buildings: bool = 'false'
+    # checkbox_agents: bool = 'False'
+    # checkbox_owner: bool = 'False'
 
     # --- Browser ---
     base_url: str = 'https://krisha.kz'
@@ -33,7 +36,6 @@ class Config(pydantic.BaseSettings):
 
     # --- Context ---
     context: EnvContext = 'local'
-
 
 context = Config().context
 config = Config(_env_file=path.to_resource(f'.env.{context}'))
