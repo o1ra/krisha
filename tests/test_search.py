@@ -1,10 +1,9 @@
 import allure
 from allure_commons.types import Severity
 from selene import browser
+from config import config
 from krisha_kz.data import data_user
 from krisha_kz.model.main_page import SearchPage
-from tests.conftest import data
-
 
 
 @allure.tag("web")
@@ -38,9 +37,10 @@ def test_default_search():
 @allure.feature("Поиск")
 @allure.story("Выполнение поиска покупки квартиры ")
 @allure.link("https://krisha.kz", name="Testing")
-def test_search(data):
-    user_data = getattr(data_user, data)
+def test_search(context):
     search_page = SearchPage()
+
+    user_data = getattr(data_user, config.data)
 
     with allure.step("Открываем главную страницу"):
         search_page.open()
@@ -49,7 +49,7 @@ def test_search(data):
         search_page.select_category_type(user_data.buy_or_rent)
 
     with allure.step("Выбираем категорию жилья"):
-        if data == "user_rent":
+        if config.data == "user_rent":
             search_page.select_categories_for_rent(user_data.categories_for_rent)
         else:
             search_page.select_categories_for_sell(user_data.categories_for_sell)

@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
 from selene import browser
 from krisha_kz.utils import attach, path
-from config import Config
+from config import config
 
 
 def pytest_addoption(parser):
@@ -16,13 +16,6 @@ def pytest_addoption(parser):
         default="local",
         choices=["local", "test", "prod"],
         help="Specify the test context"
-    )
-    parser.addoption(
-        "--data",
-        action="store",
-        default="user_rent",
-        choices=["user_buy", "user_rent"],
-        help="Specify additional data parameter"
     )
 
 
@@ -41,24 +34,19 @@ def context(request):
     return request.config.getoption("--context")
 
 
-@pytest.fixture(scope="session")
-def data(request):
-    return request.config.getoption("--data")
-
-
 @pytest.fixture(scope="function", autouse=True)
-def browser_management(request, context, data):
-    browser.config.base_url = Config().base_url
-    browser.config.driver_name = Config().driver_name
-    browser.config.version = Config().version
-    browser.config.hold_driver_at_exit = Config().hold_driver_at_exit
-    browser.config.window_width = Config().window_width
-    browser.config.window_height = Config().window_height
-    browser.config.timeout = Config().timeout
+def browser_management(request, context):
+    browser.config.base_url = config.base_url
+    browser.config.driver_name = config.driver_name
+    browser.config.version = config.version
+    browser.config.hold_driver_at_exit = config.hold_driver_at_exit
+    browser.config.window_width = config.window_width
+    browser.config.window_height = config.window_height
+    browser.config.timeout = config.timeout
 
     options = Options()
 
-    if Config().headless:
+    if config.headless:
         if browser.config.driver_name == 'chrome':
             options = webdriver.ChromeOptions()
         elif browser.config.driver_name == 'firefox':
