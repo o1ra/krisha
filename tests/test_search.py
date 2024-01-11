@@ -39,7 +39,6 @@ def test_default_search():
 @allure.link("https://krisha.kz", name="Testing")
 def test_search(context):
     search_page = SearchPage()
-
     user_data = getattr(data_user, config.data)
 
     with allure.step("Открываем главную страницу"):
