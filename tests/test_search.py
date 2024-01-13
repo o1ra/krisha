@@ -1,14 +1,11 @@
 import os
-
 import allure
-import pytest
 from allure_commons.types import Severity
 from selene import browser
 from krisha_kz.model.main_page import SearchPage
 
 
 @allure.tag("web")
-@pytest.mark.web
 @allure.severity(Severity.CRITICAL)
 @allure.label("owner", "Irina_Kirillova")
 @allure.feature("Поиск")
@@ -34,7 +31,6 @@ def test_default_search():
 
 
 @allure.tag("web")
-@pytest.mark.web
 @allure.severity(Severity.CRITICAL)
 @allure.label("owner", "Irina_Kirillova")
 @allure.feature("Поиск")

@@ -1,11 +1,9 @@
 import allure
-import pytest
 from allure_commons.types import Severity
 from krisha_kz.model.main_menu import MainMenu
 
 
 @allure.tag("web")
-@pytest.mark.web
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
 @allure.feature("Главное меню")
@@ -27,7 +25,6 @@ def test_link_selling():
 
 
 @allure.tag("web")
-@pytest.mark.web
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
 @allure.feature("Главное меню")
@@ -49,7 +46,6 @@ def test_link_rent():
 
 
 @allure.tag("web")
-@pytest.mark.web
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
 @allure.feature("Главное меню")
@@ -71,7 +67,6 @@ def test_link_valuation():
 
 
 @allure.tag("web")
-@pytest.mark.web
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
 @allure.feature("Главное меню")
@@ -96,7 +91,6 @@ def test_link_seach():
 
 
 @allure.tag("web")
-@pytest.mark.web
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
 @allure.feature("Главное меню")
@@ -118,7 +112,6 @@ def test_link_news():
 
 
 @allure.tag("web")
-@pytest.mark.web
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
 @allure.feature("Главное меню")
