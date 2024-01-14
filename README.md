@@ -91,7 +91,7 @@ pytest --context=local
 
 Для перехода к отчету, нужно выбрать соответствующую иконку отчета:
 
-![This is an image](resources/allure_report.png)
+<img alt="This is an image" height="300" src="resources/allure_report.png"/>
 
 #### Пример отчета 
 
@@ -127,4 +127,4 @@ pytest --context=local
 ### Пример видео прохождения автотеста
 Тест-кейс "Регистрация без ввода пароля"
 
-![Регистрация без ввода пароля](resources/video_test.gif)
+![Регистрация без ввода пароля](resources/test_rent.gif)
