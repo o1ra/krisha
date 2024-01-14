@@ -6,6 +6,7 @@ from krisha_kz.model.main_menu import MainMenu
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
+@allure.label('layer', 'UI')
 @allure.feature("Главное меню")
 @allure.story("Продажа")
 @allure.link("https://krisha.kz", name="Testing")
@@ -27,6 +28,7 @@ def test_link_selling():
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
+@allure.label('layer', 'UI')
 @allure.feature("Главное меню")
 @allure.story("Аренда")
 def test_link_rent():
@@ -48,6 +50,7 @@ def test_link_rent():
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
+@allure.label('layer', 'UI')
 @allure.feature("Главное меню")
 @allure.story("Оценка")
 def test_link_valuation():
@@ -69,6 +72,7 @@ def test_link_valuation():
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
+@allure.label('layer', 'UI')
 @allure.feature("Главное меню")
 @allure.story("Новостройки")
 def test_link_seach():
@@ -93,6 +97,7 @@ def test_link_seach():
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
+@allure.label('layer', 'UI')
 @allure.feature("Главное меню")
 @allure.story("Новости")
 def test_link_news():
@@ -114,6 +119,7 @@ def test_link_news():
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
+@allure.label('layer', 'UI')
 @allure.feature("Главное меню")
 @allure.story("Крыша Гид")
 def test_link_guide():
