@@ -80,42 +80,48 @@ pytest --context=local
 4. В поле "COMMENT" ввести комментарий
 5. Нажать `Build`
 
-![jenkins_build](resources/jenkins_choise_param.png)
+![jenkins_build](resources/jenkins_choice_param.png)
 6. Дождаться прохождения тестов
 
-![jenkins_build](resources/выполнение тестов.png)
+![jenkins_build](resources/tests_are_running.png)
 
+По итогу будет сформированно 2 отчета: в `ALLURE REPORT` и `Allure TestOps`
 ----
 ### Allure-отчет
 
-По итогам тестов будет сфоримирован `ALLURE REPORT`
+Для перехода к отчету, нужно выбрать соответствующую иконку отчета:
 
-![This is an image](resources/allure report.png)
+![This is an image](resources/allure_report.png)
 
+#### Пример отчета 
 
-#### Список тест-кейсов
-![This is an image](resources/allure_test_cases.png)
-#### Пример отчета о прохождении теста
+![This is an image](resources/allure_rep.png)
 
-<img alt="This is an image" height="300" src="resources/example_test_allure.png"/>
+Во вклвдке `Behaviors` есть более подробная информация о этапах прохождения каждого теста, а так же прикрепленные видео, логи, скриншоты, разметка страницы
+
+![This is an image](resources/attachments.png)
 
 ----
+
 ### Allure TestOps
 
 #### Общий список всех кейсов, имеющихся в системе
-![This is an image](resources/allure_TestOps_test_cases.png)
+![This is an image](resources/test_cases.png)
 
 #### Пример dashboard с общими результатами тестирования
-![This is an image](resources/allure_TestOps_dashboard.png)
+![This is an image](resources/dashboard.png)
 
 ----
 ### Интеграция с Jira
-![This is an image](resources/jira_issue.png)
+
+[//]: # (<img alt="This is an image" height="300" src="resources/jira.png"/>)
+
+![This is an image](resources/jira.png)
 
 ----
 ### Оповещение о результатах прохождения тестов в Telegram
 
-<img alt="This is an image" height="250" src="resources/tg_notification.png"/>
+<img alt="This is an image" height="300" src="resources/telegram_tests.png"/>
 
 ----
 ### Пример видео прохождения автотеста
