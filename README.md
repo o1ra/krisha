@@ -126,6 +126,6 @@ pytest --context=local
 <img alt="This is an image" height="300" src="resources/telegram_tests.png"/>
 
 ----
-### Пример видео прохождения автотеста "Выполнние поиска аренды квартиры"
+### Пример видео прохождения автотеста "Выполнние поиска квартиры в аренду"
 
 ![Регистрация без ввода пароля](resources/test_rent.gif)
