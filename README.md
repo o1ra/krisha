@@ -85,8 +85,10 @@ pytest --context=local
 
 ![jenkins_build](resources/tests_are_running.png)
 
-По итогу будет сформированно 2 отчета: в `ALLURE REPORT` и `Allure TestOps`
+#### По итогу будет сформированно 2 отчета : в [Allure Report](https://jenkins.autotests.cloud/job/008-o11ra-diplom/52/allure/) и [Allure TestOps](https://allure.autotests.cloud/project/3915/dashboards)
+
 ----
+
 ### Allure-отчет
 
 Для перехода к отчету, нужно выбрать соответствующую иконку отчета:
