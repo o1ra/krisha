@@ -12,6 +12,7 @@ from krisha_kz.model.main_page import SearchPage
 @allure.feature("Поиск")
 @allure.story("Выполнение поиска без авторизации по умолчанию")
 @allure.link("https://krisha.kz", name="Testing")
+@allure.title("Выполнение поиска без авторизации по умолчанию")
 def test_default_search():
     search_page = SearchPage()
 
@@ -38,6 +39,7 @@ def test_default_search():
 @allure.feature("Поиск")
 @allure.story("Выполнение поиска покупки/аренды квартиры ")
 @allure.link("https://krisha.kz", name="Testing")
+@allure.title("Выполнение поиска покупки/аренды квартиры")
 def test_search(data):
 
     search_page = SearchPage()
