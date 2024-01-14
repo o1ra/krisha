@@ -36,7 +36,7 @@ def test_default_search():
 @allure.label("owner", "Irina_Kirillova")
 @allure.label('layer', 'UI')
 @allure.feature("Поиск")
-@allure.story("Выполнение поиска покупки квартиры ")
+@allure.story("Выполнение поиска покупки/аренды квартиры ")
 @allure.link("https://krisha.kz", name="Testing")
 def test_search(data):
 
