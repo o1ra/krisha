@@ -5,7 +5,7 @@ from krisha_kz_tests.utils import path
 
 
 BrowserType = Literal['chrome', 'firefox']
-EnvContext = Literal['local', 'test', 'stage']
+EnvContext = Literal['local', 'test', 'prod']
 
 
 class Config(pydantic.BaseSettings):
