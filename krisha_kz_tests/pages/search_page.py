@@ -1,5 +1,5 @@
 from selene import by, be
-from selene.support.shared import browser
+from selene import browser
 
 
 class SearchPage:
@@ -10,11 +10,9 @@ class SearchPage:
         browser.open('/')
         return self
 
-
     def map_search(self):
         browser.element('.map-search').click()
         return self
-
 
     def close_modal(self):
         browser.element('.fi-close-big').double_click()
@@ -86,3 +84,6 @@ class SearchPage:
     def title_gid(self):
         browser.element(".guide-promo__title").should.have.text("Крыша Гид")
         return self
+
+
+search_page = SearchPage()

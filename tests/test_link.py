@@ -1,6 +1,6 @@
 import allure
 from allure_commons.types import Severity
-from krisha_kz.model.main_menu import MainMenu
+from krisha_kz_tests.pages.main_page import main_menu
 
 
 @allure.tag("web")
@@ -12,7 +12,6 @@ from krisha_kz.model.main_menu import MainMenu
 @allure.link("https://krisha.kz", name="Testing")
 @allure.title("Продажа")
 def test_link_selling():
-    main_menu = MainMenu()
     with allure.step("Открываем главную страницу"):
         main_menu.open()
 
@@ -34,8 +33,6 @@ def test_link_selling():
 @allure.story("Аренда")
 @allure.title("Аренда")
 def test_link_rent():
-    main_menu = MainMenu()
-
     with allure.step("Открываем главную страницу"):
         main_menu.open()
 
@@ -57,8 +54,6 @@ def test_link_rent():
 @allure.story("Оценка")
 @allure.title("Оценка")
 def test_link_valuation():
-    main_menu = MainMenu()
-
     with allure.step("Открываем главную страницу"):
         main_menu.open()
 
@@ -80,8 +75,6 @@ def test_link_valuation():
 @allure.story("Новостройки")
 @allure.title("Новостройки")
 def test_link_seach():
-    main_menu = MainMenu()
-
     with allure.step("Открываем главную страницу"):
         main_menu.open()
 
@@ -106,8 +99,6 @@ def test_link_seach():
 @allure.story("Новости")
 @allure.title("Новости")
 def test_link_news():
-    main_menu = MainMenu()
-
     with allure.step("Открываем главную страницу"):
         main_menu.open()
 
@@ -129,8 +120,6 @@ def test_link_news():
 @allure.story("Крыша Гид")
 @allure.title("Крыша Гид")
 def test_link_guide():
-    main_menu = MainMenu()
-
     with allure.step("Открываем главную страницу"):
         main_menu.open()
 

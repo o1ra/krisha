@@ -5,9 +5,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
 from selene import browser
-from krisha_kz.utils import attach, path
+from krisha_kz_tests.utils import attach, path
 from config import config
-from krisha_kz.data.data_user import user_rent, user_buy
+from krisha_kz_tests.data.data_user import user_rent, user_buy
 
 
 def pytest_addoption(parser):
@@ -44,7 +44,6 @@ def data():
         return user_buy
     else:
         raise ValueError(f"Unsupported data type: {data_type}")
-
 
 
 @pytest.fixture(scope="function", autouse=True)

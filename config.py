@@ -1,7 +1,7 @@
 import os
 from typing import Literal
 import pydantic
-from krisha_kz.utils import path
+from krisha_kz_tests.utils import path
 
 
 BrowserType = Literal['chrome', 'firefox']

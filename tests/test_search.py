@@ -2,7 +2,7 @@ import os
 import allure
 from allure_commons.types import Severity
 from selene import browser
-from krisha_kz.model.main_page import SearchPage
+from krisha_kz_tests.pages.search_page import search_page
 
 
 @allure.tag("web")
@@ -14,8 +14,6 @@ from krisha_kz.model.main_page import SearchPage
 @allure.link("https://krisha.kz", name="Testing")
 @allure.title("Выполнение поиска без авторизации по умолчанию")
 def test_default_search():
-    search_page = SearchPage()
-
     with allure.step("Открываем главную страницу"):
         search_page.open()
 
@@ -41,9 +39,6 @@ def test_default_search():
 @allure.link("https://krisha.kz", name="Testing")
 @allure.title("Выполнение поиска покупки/аренды квартиры")
 def test_search(data):
-
-    search_page = SearchPage()
-
     with allure.step("Открываем главную страницу"):
         search_page.open()
 

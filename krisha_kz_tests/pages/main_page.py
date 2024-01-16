@@ -1,5 +1,5 @@
 from selene import by, have
-from selene.support.shared import browser
+from selene import browser
 
 
 class MainMenu:
@@ -40,4 +40,6 @@ class MainMenu:
             have.text("Узнайте за какую цену продать, сдать или купить квартиру"))
         return self
 
-    
+
+main_menu = MainMenu()
+
