@@ -1,7 +1,6 @@
 from selene import browser, by, have
 
 
-
 class MainMenu:
     def __int__(self):
         pass
@@ -25,7 +24,7 @@ class MainMenu:
     def item_new_bildings(self):
         browser.element('.complex-fast-filter__item--selected').element(by.text('ЖК в продаже'))
         return self
-    
+
     def title_new_bildings(self):
         browser.element(".heading").should(
             have.text("Новостройки в Казахстане"))
@@ -42,4 +41,3 @@ class MainMenu:
 
 
 main_menu = MainMenu()
-
