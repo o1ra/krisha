@@ -1,5 +1,5 @@
-from selene import by, be
-from selene import browser
+from selene import browser, by, be
+
 
 
 class SearchPage:

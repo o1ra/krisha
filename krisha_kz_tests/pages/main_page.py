@@ -1,5 +1,5 @@
-from selene import by, have
-from selene import browser
+from selene import browser, by, have
+
 
 
 class MainMenu:
